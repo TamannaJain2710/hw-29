@@ -15,6 +15,7 @@ function setup() {
   var canvas = createCanvas(1000,400);
   engine = Engine.create();
   world = engine.world;
+  console.log(mouseY)
   b1=new Box(480,275);
   b2=new Box(510,275);
   b3=new Box(540,275);
@@ -27,10 +28,10 @@ function setup() {
   b10=new Box(540,235);
   b11=new Box(570,235);
   b12=new Box(600,235);
-  b13=new Box(500,195);
-  b14=new Box(530,195);
-  b15=new Box(560,195);
-  b16=new Box(530,155);
+  b13=new Box(510,195);
+  b14=new Box(540,195);
+  b15=new Box(570,195);
+  b16=new Box(540,155);
   b17=new Box(800,100);
   b18=new Box(800,140);
   b19=new Box(830,140);
@@ -51,7 +52,7 @@ function setup() {
   ball = Bodies.circle(50,200,20);
   World.add(world,ball);
 
-  chain1 = new SlingShot(this.ball,{x:100,y:300});
+  chain1 = new SlingShot(ball,{x:100,y:300});
 }
 function draw() {
   background("black"); 
@@ -100,7 +101,7 @@ function draw() {
 
 }
 function mouseDragged(){
-  Matter.Body.setPosition(this.ball, {x: mouseX , y: mouseY});
+  Matter.Body.setPosition(ball, {x: mouseX , y: mouseY});
 }
 function mouseReleased(){
   chain1.fly();
