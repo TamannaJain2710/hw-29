@@ -49,7 +49,7 @@ function setup() {
     restitution:0.5,
     friction:1.2,
   }
-  ball = Bodies.circle(50,200,20);
+  ball = Bodies.circle(50,200,20,{restitution:0.5,friction:0.5,density:3});
   World.add(world,ball);
 
   chain1 = new SlingShot(ball,{x:100,y:300});
