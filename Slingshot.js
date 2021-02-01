@@ -10,9 +10,7 @@ class SlingShot{
         this.sling = Constraint.create(options);
         World.add(world, this.sling);
     }
-    fly(){
-        this.sling.bodyA=null;
-    }
+    
     display(){
         push();
         if(this.sling.bodyA){
@@ -23,5 +21,11 @@ class SlingShot{
         line(pointA.x,pointA.y,pointB.x,pointB.y);
         pop();
         }
+    }
+    fly(){
+        this.sling.bodyA=null;
+    }
+    attach(body){
+        this.sling.bodyA = body;
     }
 }

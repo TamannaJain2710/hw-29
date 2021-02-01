@@ -52,7 +52,7 @@ function setup() {
   ball = Bodies.circle(50,200,20,{restitution:0.5,friction:0.5,density:3});
   World.add(world,ball);
 
-  chain1 = new SlingShot(ball,{x:100,y:300});
+  chain1 = new SlingShot(ball,{x:100,y:200});
 }
 function draw() {
   background("black"); 
@@ -89,7 +89,6 @@ function draw() {
   b23.display();
   b24.display();
   b25.display();
- // chain1.display();
   ground1.display();
   ground2.display();
   ground3.display();
@@ -106,4 +105,9 @@ function mouseDragged(){
 function mouseReleased(){
   chain1.fly();
 
+}
+function keyPressed(){
+  if(keyCode === 32){
+  chain1.attach(ball.body);
+  }
 }
